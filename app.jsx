@@ -12,12 +12,7 @@ function App() {
     setBasename(basePath);
 
     const checkDependencies = () => {
-      if (
-        window.Home &&
-        window.MemeCard &&
-        window.MemeSearch &&
-        window.TrendingMemes
-      ) {
+      if (window.TalkingTom) {
         setIsReady(true);
       }
     };
@@ -29,9 +24,9 @@ function App() {
 
   if (!isReady) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-pink-500"></div>
-        <p className="mt-4 text-white text-lg">Loading MemeHunter...</p>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-400 via-purple-500 to-pink-400">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-white"></div>
+        <p className="mt-4 text-white text-lg font-semibold">Loading Tom...</p>
       </div>
     );
   }
@@ -39,7 +34,7 @@ function App() {
   return (
     <BrowserRouter basename={basename}>
       <Routes>
-        <Route path="/" element={<window.Home />} />
+        <Route path="/" element={<window.TalkingTom />} />
       </Routes>
     </BrowserRouter>
   );
